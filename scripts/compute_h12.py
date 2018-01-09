@@ -13,10 +13,18 @@ parser.add_argument("out", default=None)
 parser.add_argument("--windowsize", "-w", default=500, type=int)
 parser.add_argument("--chrom", "-c", default=None, required=True)
 parser.add_argument("--samples", required=True)
+parser.add_argument("--downsample", "-d", default=None, type=int)
 args = parser.parse_args()
 
 with open(args.samples, "r") as reader:
     samples = [x.rstrip() for x in reader.readlines()]
+
+if args.downsample is not None:
+    samples = np.random.choice(samples, args.downsample).tolist()
+elif len(samples) > 100:
+    print("You are running with {0} samples. ".format(len(samples)) + \
+          "This may take a long time to run. " + \
+          "Consider using the --downsample argument")
 
 fh = h5py.File(args.hdf5, "r")[args.chrom]
 
