@@ -1,11 +1,4 @@
-# Selection / linux workshop
-~ Nick Harding
-
-## Talk on selection scans.
-After the course you can download this from (here)[]
-
-
-## Analysis 1. Computing fixation index (Fst)
+# Analysis 1. Computing fixation index (Fst)
 
 Fst is a measure of genetic differentiation between two populations.
 For this reason it can be a useful indicator of selection (as well as other things!).
@@ -40,7 +33,7 @@ mkdir output
 Now we create some *symlinks*, these are shortcuts to the data we will be using. They are not strictly required, but make finding files much easier. 
 
 ```
-ln -s /GAARD/selection/samples/ 
+ln -s /GAARD/selection/samples 
 ln -s /GAARD/selection/scripts
 ln -s /home/elucas/galaxy_stuff/phase2.AR1
 ```
@@ -54,24 +47,24 @@ NOTE: These are just links to the data. Deleting your link will not delete the d
 
 This is a table describing the files in the `samples/` directory.
 
-| File | Population |
-| --------| ----------|
-| phase2.ar1.AOcol.txt | Angola coluzzii |
-| phase2.ar1.CIcol.txt | Cote d'Ivoire coluzzii |
-| phase2.ar1.GAgam.txt | Gabon gambiae |
-| phase2.ar1.GM.txt | The Gambia |
-| phase2.ar1.GQgam.txt | Equatorial Guinea gambiae |
-| phase2.ar1.UGgam.txt | Uganda gambiae |
-| phase2.ar1.BFcol.txt | Burkina Faso coluzzii |
-| phase2.ar1.CMgam.txt | Cameroon gambiae |
-| phase2.ar1.GHcol.txt | Ghana coluzzii |
-| phase2.ar1.GNcol.txt | Guinea coluzzii |
-| phase2.ar1.GW.txt | Guinea Bissau |
-| phase2.ar1.BFgam.txt | Burkina Faso gambiae |
-| phase2.ar1.FRgam.txt | French Mayotte - gambiae |
-| phase2.ar1.GHgam.txt | Ghana coluzzii |
-| phase2.ar1.GNgam.txt | Guinea gambiae |
-| phase2.ar1.KE.txt | Kenya (kilifi) |
+| File | | Population |
+| -------------------| -- | ---------------|
+| phase2.ar1.AOcol.txt |  | Angola _coluzzii_ |
+| phase2.ar1.CIcol.txt |  | Cote d'Ivoire _coluzzii_ |
+| phase2.ar1.GAgam.txt |  | Gabon _gambiae_ |
+| phase2.ar1.GM.txt |  | The Gambia |
+| phase2.ar1.GQgam.txt |  | Equatorial Guinea _gambiae_ |
+| phase2.ar1.UGgam.txt |  | Uganda _gambiae_ |
+| phase2.ar1.BFcol.txt |  | Burkina Faso _coluzzii_ |
+| phase2.ar1.CMgam.txt |  | Cameroon _gambiae_ |
+| phase2.ar1.GHcol.txt |  | Ghana _coluzzii_ |
+| phase2.ar1.GNcol.txt |  | Guinea _coluzzii_ |
+| phase2.ar1.GW.txt |  | Guinea Bissau |
+| phase2.ar1.BFgam.txt |  | Burkina Faso _gambiae_ |
+| phase2.ar1.FRgam.txt |  | French Mayotte - _gambiae_ |
+| phase2.ar1.GHgam.txt |  | Ghana _coluzzii_ |
+| phase2.ar1.GNgam.txt |  | Guinea _gambiae_ |
+| phase2.ar1.KE.txt |  | Kenya (kilifi) |
 
 Task: Use the `wc` command to count how many samples are in each population.
 The `wc` command counts the numer of lines, words, and characters in a file.
@@ -98,7 +91,10 @@ When you have edited you file, you can run the script using:
 ```
 bash my_run_fst.sh
 ```
+Expect this to take several minutes.
 
-Look at the file you have created in `output/`!
+If it finishes successfully. Look at the file you have created in `output/`!
 
-If you get this far, we can pull this file off the cluster for you to plot these data.
+If you get this far, using what you learned on Wednesday to download this file from the cluster for you to plot these data.
+
+~ nick harding
