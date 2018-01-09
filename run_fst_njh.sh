@@ -6,10 +6,10 @@ source /var/lib/galaxy-server/miniconda3/miniconda3/bin/activate GAARD_35
 
 python /GAARD/selection/scripts/compute_fst.py \
   phase2.AR1/variation/main/vcf/pass/ag1000g.phase2.ar1.pass.3L.vcf.gz \
-  output/{1} \
-  --samplesA samples/{2} \
-  --samplesB samples/{3} \
-  --windowsize {4} \
+  output/BF_gam-vs-col_fst.txt \
+  --samplesA samples/phase2.ar1.BFcol.txt \
+  --samplesB samples/phase2.ar1.BFgam.txt \
+  --windowsize 25000 \
   --chrom 3L \
   --downsample 50
 

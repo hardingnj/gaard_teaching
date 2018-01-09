@@ -12,6 +12,7 @@ parser.add_argument("vcf", default=None)
 parser.add_argument("out", default=None)
 
 parser.add_argument("--windowsize", "-w", default=100000, type=int)
+parser.add_argument("--downsample", "-d", default=None, type=int)
 parser.add_argument("--chrom", "-c", default=None, required=True)
 
 parser.add_argument("--samplesA", required=True)
@@ -19,10 +20,17 @@ parser.add_argument("--samplesB", required=True)
 
 args = parser.parse_args()
 
+
 with open(args.samplesA, "r") as reader:
     samplesA = [x.rstrip() for x in reader.readlines()]
+if args.downsample is not None:
+    samplesA = np.random.choice(samplesA, args.downsample).tolist()
+
+
 with open(args.samplesB, "r") as reader:
     samplesB = [x.rstrip() for x in reader.readlines()]
+if args.downsample is not None:
+    samplesB = np.random.choice(samplesB, args.downsample).tolist()
 
 fh = allel.read_vcf(args.vcf)
 
