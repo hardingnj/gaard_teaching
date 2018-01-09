@@ -1,6 +1,11 @@
 #! /bin/bash
 
-#! /bin/bash
+# READ THIS!
+# This is the script we will use to compute fst between two populations on chromosome 3L.
+# You will need to decide which 2 populations you wish to compare.
+# You will also need to choose the name of your output file, and the window size you will use.
+# Too small will not be informative as there will be too few variants, too large will give poor resolution.
+# READ THE COMMAND BELOW AND REPLACE THE {#} WITH APPROPRIATE INPUT.
 
 source /var/lib/galaxy-server/miniconda3/miniconda3/bin/activate GAARD_35
 
